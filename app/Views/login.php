@@ -43,18 +43,21 @@
                         <div class="col-md-6 login-block1 pt-3 pr-1 pr-md-5 mb-4 mb-md-0">
                             <div class="login-box card pt-4 mb-0 mx-auto">
                                 <div class="card-body p-0 pr-1 pr-md-5">
-                                    <form class="needs-validation form-control-line" novalidate id="loginform" action="<?= base_url(); ?>blank">
+                                    <form class="needs-validation form-control-line" novalidate id="loginform" action="/login/auth" method="post">
                                         <h2 class="my-3 text-white">Login to your Account</h2>
                                         <h6 class="my-3 text-white">Having trouble signing in? <a href="javascript:void(0)" class="text-danger" id="to-recover">Click Here</a></h6>
+                                        <?php if(session()->getFlashdata('msg')):?>
+                                            <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                                        <?php endif;?>
                                         <div class="form-group m-t-40">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="text"  placeholder="Username" id="validationCustom01" required>
+                                                <input class="form-control text-white" type="text"  placeholder="Enter Email Address" id="email" name="email" required>
                                                  <div class="invalid-feedback">Username is required</div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="password" placeholder="Password" id="validationCustom02" required>
+                                                <input class="form-control text-white" type="password" placeholder="Enter Password" id="password" name="password" required>
                                                 <div class="invalid-feedback">Password is required</div>
                                             </div>
                                         </div>
