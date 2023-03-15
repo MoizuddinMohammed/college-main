@@ -29,17 +29,20 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('register', 'Home::register');
-$routes->get('blank', 'Home::blank');
-$routes->get('dashboard', 'Home::dashboard');
+$routes->get('/', 'Login::index');
+$routes->post('login/auth', 'Login::auth'); 
+$routes->get('logout', 'Login::logout'); 
+$routes->get('register', 'Register::index');
+$routes->post('register/save', 'Register::save'); 
+$routes->get('blank', 'Home::blank',['filter' => 'auth']);
+$routes->get('dashboard', 'Home::dashboard',['filter' => 'auth']);
 
-$routes->get('college', 'College::index');
-$routes->get('college/create', 'College::create');
-$routes->post('college/save', 'College::save'); 
-$routes->get('college/edit/(:any)', 'College::edit/$1');
-$routes->post('college/update', 'College::update'); 
-$routes->get('college/delete/(:any)', 'College::delete/$1');
+$routes->get('college', 'College::index',['filter' => 'auth']);
+$routes->get('college/create', 'College::create',['filter' => 'auth']);
+$routes->post('college/save', 'College::save',['filter' => 'auth']); 
+$routes->get('college/edit/(:any)', 'College::edit/$1',['filter' => 'auth']);
+$routes->post('college/update', 'College::update',['filter' => 'auth']); 
+$routes->get('college/delete/(:any)', 'College::delete/$1',['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------

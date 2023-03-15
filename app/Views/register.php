@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <title><?= constant("PROJECT_NAME")?> | <?= $title ?></title>
     <!-- page css -->    
-    <link href="assets/node_modules/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/node_modules/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
-    <link href="dist/css/pages/login.css" rel="stylesheet">
+    <link href="/dist/css/style.min.css" rel="stylesheet">
+    <link href="/dist/css/pages/login.css" rel="stylesheet">
 </head>
 <body class="skin-default card-no-border">
     <!-- ============================================================== -->
@@ -31,43 +31,46 @@
     <!-- ============================================================== -->
     <section id="wrapper" class="login-register admin-login">
         <div class=" admin-login-body">
-            <div class="copyright"> <a href="javascript:void(0)" class="form-logo"><img src="assets/images/logo-placeholder1.png" alt="Home" style="max-width:40px"></a>  Powered by RanSup Technolgies</div>
+            <div class="copyright"> <a href="javascript:void(0)" class="form-logo"><img src="/assets/images/logo-placeholder1.png" alt="Home" style="max-width:40px"></a>  Powered by RanSup Technolgies</div>
             <div class="row login_row">
                 <div class="col-md-12 login-banner-block p-sm-5 p-4">
                     <div class="row login_menu mx-0">
                         <div class="col-6">
-                            <div class="site-logo"><a href="javascript:void(0)" class="form-logo"><img src="assets/images/logo-placeholder1.png" alt="Home" /></a></div>
+                            <div class="site-logo"><a href="javascript:void(0)" class="form-logo"><img src="/assets/images/logo-placeholder1.png" alt="Home" /></a></div>
                         </div>
                     </div>
                     <div class="row mx-0">
                         <div class="col-md-6 login-block1 pt-3 pr-1 pr-md-5 mb-4 mb-md-0">
                             <div class="login-box card pt-4 mb-0 mx-auto">
                                 <div class="card-body p-0 pr-1 pr-md-5">
-                                    <form class="needs-validation form-control-line" novalidate id="loginform" action="<?= base_url(); ?>blank">
+                                    <form class="needs-validation form-control-line" novalidate id="loginform" action="/register/save" method="post">
                                         <h2 class="my-3 text-white">Create  Account</h2>
                                         <h6 class="my-3 text-white">Already have account? <a href="/" class="text-danger">Click Here</a></h6>
+                                        <?php if(isset($validation)):?>
+                                            <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+                                        <?php endif;?>
                                         <div class="form-group m-t-40">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="text"  placeholder="Name" id="validationCustom01" required>
+                                                <input class="form-control text-white" type="text"  placeholder="Name" id="name" name="name" required>
                                                  <div class="invalid-feedback">Name is required</div>
                                             </div>
                                         </div>
-                                        <div class="form-group m-t-40">
+                                        <div class="form-group ">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="email"  placeholder="Username" id="validationCustom01" required>
+                                                <input class="form-control text-white" type="email"  placeholder="Email Address" id="email" name="email" required>
                                                  <div class="invalid-feedback">Username is required</div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group m-t-40">
-                                            <div class="col-xs-12">
-                                                <input class="form-control text-white" type="text"  placeholder="Phone" id="validationCustom01" required>
-                                                 <div class="invalid-feedback">Phone is required</div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="password" placeholder="Password" id="validationCustom02" required>
+                                                <input class="form-control text-white" type="password" placeholder="Password" id="password" name="password" required>
                                                 <div class="invalid-feedback">Password is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <input class="form-control text-white" type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" required>
+                                                <div class="invalid-feedback">Confirm Password is required</div>
                                             </div>
                                         </div>
                                         <div class="form-row m-t-40">
@@ -89,7 +92,7 @@
                         </div>
                         <div class="col-md-6 pl-1 pl-md-4">
                             <div class="login_img text-center">
-                                <img class="img-fluid" src="assets/images/login-banner.png">
+                                <img class="img-fluid" src="/assets/images/login-banner.png">
                             </div>
                         </div>
                      </div>
@@ -103,12 +106,12 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/node_modules/popper/popper.min.js"></script>
-    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
-     <script src="dist/js/user_validation.js" type="text/javascript"></script>
+    <script src="/assets/node_modules/popper/popper.min.js"></script>
+    <script src="/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+     <script src="/dist/js/user_validation.js" type="text/javascript"></script>
     <!--Custom JavaScript -->
     <script type="text/javascript">
         $(function() {
