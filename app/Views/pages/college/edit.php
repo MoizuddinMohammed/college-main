@@ -74,7 +74,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label" for="address">Address</label>
-                                    <input type="email" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?= $college->address;?>" required>
+                                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?= $college->address;?>" required>
                                     <div class="invalid-feedback">Address is required</div>
                                 </div>
                             </div>
