@@ -44,6 +44,13 @@ $routes->get('college/edit/(:any)', 'College::edit/$1',['filter' => 'auth']);
 $routes->post('college/update', 'College::update',['filter' => 'auth']); 
 $routes->get('college/delete/(:any)', 'College::delete/$1',['filter' => 'auth']);
 
+$routes->get('groups','Groups::index',['filter' => 'auth']);
+$routes->get('groups/create','Groups::create',['filter' => 'auth']);
+$routes->post('groups/save','Groups::save',['filter' => 'auth']);
+$routes->get('groups/edit/(:any)','Groups::edit/$1',['filter' => 'auth']);
+$routes->post('groups/update','Groups::update',['filter' => 'auth']);
+$routes->get('groups/delete/(:any)','Groups::delete/$1',['filter' => 'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

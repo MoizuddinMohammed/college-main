@@ -124,8 +124,8 @@
                         <li class="nav-small-cap">--- COMPONENTS</li>
                         <li><a class="waves-effect waves-dark" href="/dashboard"><i class="icon-speedometer text-primary"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li><a class="waves-effect waves-dark" href="/college"><i class="icon-speedometer text-primary"></i><span class="hide-menu">College</span></a></li>
-                        <li><a class="waves-effect waves-dark" href="/blank"><i class="icon-speedometer text-primary"></i><span class="hide-menu">Class</span></a></li>
-                        <li><a class="waves-effect waves-dark" href="/blank"><i class="icon-speedometer text-primary"></i><span class="hide-menu">Blank</span></a></li>
+                        <li><a class="waves-effect waves-dark" href="/groups"><i class="icon-speedometer text-primary"></i><span class="hide-menu">Groups</span></a></li>
+                        <li><a class="waves-effect waves-dark" href="/years"><i class="icon-speedometer text-primary"></i><span class="hide-menu">Years</span></a></li>
                         <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer text-danger"></i><span class="hide-menu">Documents</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/blank">Blank</a></li>
