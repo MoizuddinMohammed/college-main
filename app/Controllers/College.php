@@ -34,9 +34,11 @@ class College extends BaseController
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
+            $session->setFlashdata('message','Data Inserted successfully');
             return redirect()->to('/college');
         }else{
             $session->setFlashdata('status','danger');
+            $session->setFlashdata('message','Something went wrong');
             return redirect()->to('/college/create');
         }        
     }
@@ -63,9 +65,11 @@ class College extends BaseController
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
+            $session->setFlashdata('message','Data Updated successfully');
             return redirect()->to('/college');
         }else{
             $session->setFlashdata('status','danger');
+            $session->setFlashdata('message','Something went wrong');
             return redirect()->to('/college/edit/'.$id);
         }        
     }
@@ -76,9 +80,11 @@ class College extends BaseController
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
+            $session->setFlashdata('message','Data Deleted successfully');
             return redirect()->to('/college');
         }else{
             $session->setFlashdata('status','danger');
+            $session->setFlashdata('message','Something went wrong');
             return redirect()->to('/college');
         }        
     }

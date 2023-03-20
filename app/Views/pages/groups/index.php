@@ -40,13 +40,13 @@
                             <?php if($session->getFlashdata('status')=='success'){ ?>
                                 <div class="alert alert-success">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
-                                    <h3 class="text-success"><i class="fa fa-check-circle"></i> Success</h3> Record Inserted successfully
+                                    <h3 class="text-success"><i class="fa fa-check-circle"></i> Success</h3> <?= $session->getFlashdata('message'); ?>
                                 </div>
                             <?php  } ?>
                             <?php if($session->getFlashdata('status')=='danger'){?>
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
-                                    <h3 class="text-danger"><i class="fa fa-exclamation-triangle"></i> Failed</h3> Something went wrong
+                                    <h3 class="text-danger"><i class="fa fa-exclamation-triangle"></i> Failed</h3> <?= $session->getFlashdata('message'); ?>
                                 </div>
                             <?php } ?>                            
                             <div class="table-responsive print_table">                   

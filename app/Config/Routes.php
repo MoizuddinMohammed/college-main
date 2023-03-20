@@ -51,6 +51,13 @@ $routes->get('groups/edit/(:any)','Groups::edit/$1',['filter' => 'auth']);
 $routes->post('groups/update','Groups::update',['filter' => 'auth']);
 $routes->get('groups/delete/(:any)','Groups::delete/$1',['filter' => 'auth']);
 
+$routes->get('years','Years::index',['filter' => 'auth']);
+$routes->get('years/create','Years::create',['filter' => 'auth']);
+$routes->post('years/save','Years::save',['filter' => 'auth']);
+$routes->get('years/edit/(:any)','Years::edit/$1',['filter' => 'auth']);
+$routes->post('years/update','Years::update',['filter' => 'auth']);
+$routes->get('years/delete/(:any)','Years::delete/$1',['filter' => 'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
