@@ -17,7 +17,7 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="/groups">Groups</a></li>
+                        <li class="breadcrumb-item"><a href="/years">Years</a></li>
                         <li class="breadcrumb-item active"><?= $title ?></li>
                     </ol>
                 </div>
@@ -34,8 +34,7 @@
                 <div class="card card-body">
                     <h4 class="card-title"><?= $title ?></h4>
                     <h6 class="card-subtitle">Please fill the form</h6>
-                    <?//=  print_r($group);?>
-                    <form class="needs-validation mt-2" novalidate action="/groups/update" method="post">
+                    <form class="needs-validation mt-2" novalidate action="/years/save" method="post">
                         <?php $session = \Config\Services::session();?>
                         <?php if($session->getFlashdata('status')=='success'){ ?>
                             <div class="alert alert-success">
@@ -52,21 +51,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="name">Group Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Group Name" value="<?= $group->name;?>" required>
-                                    <div class="invalid-feedback">Group Name is required</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label" for="address">Group Code</label>
-                                    <input type="text" class="form-control" id="code" name="code" placeholder="Enter Group Code" value="<?= $group->code;?>" required>
-                                    <div class="invalid-feedback">Group Code is required</div>
+                                    <label class="control-label" for="year">Year</label>
+                                    <input type="text" class="form-control" id="year" name="year" placeholder="Enter Year" required>
+                                    <div class="invalid-feedback">Year is required</div>
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="group_id" value="<?= $group->group_id;?>">
-                        <button class="btn btn-danger px-5" type="submit">Update</button>
+                        <button class="btn btn-danger px-5" type="submit">Save</button>
                     </form>
                 </div>
             </div>

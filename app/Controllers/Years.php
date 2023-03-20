@@ -1,90 +1,88 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\GroupsModel;
+use App\Models\YearsModel;
 
-class Groups extends BaseController
+class Years extends BaseController
 {
     public function index(){
-        $model = new GroupsModel();
+        $model = new YearsModel();
         $data =[
-            'title'  => 'Groups',
-            'groups' => $model->getGroup(),
+            'title'  => 'Years',
+            'years' => $model->fetchData(),
         ];
         return view('templates/header',$data)
-        .view('pages/groups/index')
+        .view('pages/years/index')
         .view('templates/footer');
     }
 
     public function create(){
         $data =[
-            'title'  => 'Add Groups',
+            'title'  => 'Add Years',
         ];
         return view('templates/header',$data)
-        .view('pages/groups/create')
+        .view('pages/years/create')
         .view('templates/footer');
     }
 
     public function save(){        
-        $model = new GroupsModel();
+        $model = new YearsModel();
         $data =[
-            'name'  => $this->request->getPost('name'),
-            'code'  => $this->request->getPost('code'),
+            'year'  => $this->request->getPost('year'),
         ];
-        $result = $model->saveGroup($data);
+        $result = $model->saveData($data);
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
             $session->setFlashdata('message','Data Inserted successfully');
-            return redirect()->to('/groups');
+            return redirect()->to('/years');
         }else{
             $session->setFlashdata('status','danger');
             $session->setFlashdata('message','Something went wrong');
-            return redirect()->to('/groups/create');
+            return redirect()->to('/years/create');
         }
     }
 
     public function edit($id){
-        $model = new GroupsModel();
+        $model = new YearsModel();
         $data =[
-            'title'  => 'Edit Groups',
-            'group'  => $model->getGroup($id)->getRow(),
+            'title'  => 'Edit Years',
+            'years'  => $model->fetchData($id)->getRow(),
         ];
         return view('templates/header',$data)
-        .view('pages/groups/edit')
+        .view('pages/years/edit')
         .view('templates/footer');
     }
     public function update(){
-        $model = new GroupsModel();
-        $id = $this->request->getPost('group_id');
+        $model = new YearsModel();
+        $id = $this->request->getPost('year_id');
         $data= [
-            'name' => $this->request->getPost('name'),
-            'code' => $this->request->getPost('code'),
+            'year' => $this->request->getPost('year'),
         ];
-        $result = $model->updateGroup($data,$id);
+        $result = $model->updateData($data,$id);
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
             $session->setFlashdata('message','Data Updated successfully');
-            return redirect()->to('/groups');
+            return redirect()->to('/years');
         }else{
             $session->setFlashdata('status','danger');
             $session->setFlashdata('message','Something went wrong');
-            return redirect()->to('/groups/edit/'.$id);
+            return redirect()->to('/years/edit/'.$id);
         }
     }
     public function delete($id){
-        $model = new GroupsModel();
-        $result = $model->deleteGroup($id);
+        $model = new YearsModel();
+        $result = $model->deleteData($id);
         $session = \Config\Services::session();
         if($result){
             $session->setFlashdata('status','success');
             $session->setFlashdata('message','Data Deleted successfully');
-            return redirect()->to('/groups');
+            return redirect()->to('/years');
         }else{
             $session->setFlashdata('status','danger');
             $session->setFlashdata('message','Something went wrong');
-            return redirect()->to('/groups');
+            return redirect()->to('/years');
         }
     }
 }

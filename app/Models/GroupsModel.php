@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class GroupsModel extends Model
-{
+class GroupsModel extends Model{
     protected $table = 'groups';
 
     public function getGroup($id=false){
