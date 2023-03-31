@@ -38,6 +38,18 @@ class Login extends Controller
             return redirect()->to(base_url());
         }
     }
+
+    public function recovery(){
+        print_r($_POST);
+        $session = session();
+        $model = new UserModel();
+        $email = $this->request->getPost('email');
+        $emailexits = $model->where('email', $email)->first();
+        if($emailexits){
+            $result = $model->sendPassword($email);
+        }
+        print_r($result);
+    }    
   
     public function logout(){
         $session = session();
