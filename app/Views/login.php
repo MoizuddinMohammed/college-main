@@ -78,12 +78,12 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <form class="needs-validation form-control-line" novalidate id="recoverform" action="dashboard.html">
+                                    <form class="needs-validation form-control-line" novalidate id="recoverform" action="/login/recovery" method="post">
                                         <h2 class="my-3 text-white">Recover Password</h2>
                                         <h6 class="my-3 text-white">Enter your Email and instructions will be sent to you!</h6>
                                         <div class="form-group m-t-40">
                                             <div class="col-xs-12">
-                                                <input class="form-control text-white" type="email" required="" placeholder="Email">
+                                                <input class="form-control text-white" type="email" name="email" required="" placeholder="Email">
                                                  <div class="invalid-feedback">Email is required</div>
                                             </div>
                                         </div>

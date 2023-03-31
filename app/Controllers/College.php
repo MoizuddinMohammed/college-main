@@ -7,7 +7,7 @@ class College extends BaseController
 {
     public function index(){
         $model = new CollegeModel();
-        $this->session 	= \Config\Services::session();
+        $session 	= \Config\Services::session();
         $data = [
             'title'   => 'College',
             'college' => $model->getCollege(),
